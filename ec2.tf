@@ -1,10 +1,7 @@
 resource "aws_instance" "Master"{
-ami = "ami-0d27e0fb3bac4d724"
-instance_type  = "t3.micro"
-tags = {
-    Name = "Master"
-    Purpose = "practice"
-    }
+ami = var.ami_id
+instance_type  = var.instance_type
+tags = var.ec2_tags  
 }
 
 resource "aws_security_group" "allow_all" {
@@ -12,17 +9,17 @@ name = "allow_all"
 description = "security for ec2"
 
 ingress{
-    from_port = 22
-    to_port = 22
-    protocol = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    from_port = var.from_port
+    to_port = var.to_port
+    protocol = var.protocol
+    cidr_blocks = var.cidr_blocks
 }
 
 egress{
     from_port = 0
     to_port = 0
-    protocol = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    protocol = var.protocol
+    cidr_blocks = var.cidr_blocks
 }
 tags = {
     Name = "allow_all"
