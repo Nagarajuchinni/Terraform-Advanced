@@ -13,7 +13,7 @@ variable "ec2_tags" {
   default = {
     project = "expense"
     component = "backend"
-    env = dev
+    env = "dev"
   }
 }
 
