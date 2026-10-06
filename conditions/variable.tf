@@ -4,9 +4,9 @@ variable "ami_id" {
   description = "this is ec2 variable"
 }
 
-variable "instance_type" {
+/* variable "instance_type" {
   #default = "t3.micro"
-}
+} */
 
 variable "environment" {
   default = "dev"
