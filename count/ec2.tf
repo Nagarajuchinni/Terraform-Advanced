@@ -2,7 +2,9 @@ resource "aws_instance" "Master"{
 ami = var.ami_id
 count = 3
 instance_type  = var.instance_type
-tags = var.ec2_tags  
+tags = {
+    Name = var.instances[count.index]
+} 
 }
 
 resource "aws_security_group" "allow_all" {

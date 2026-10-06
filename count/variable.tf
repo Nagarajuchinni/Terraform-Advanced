@@ -8,14 +8,17 @@ variable "instance_type" {
   default = "t3.micro"
 }
 
-variable "ec2_tags" {
+variable "instances" {
+  default = ["nag", "raj", "chinni"]
+}
+/* variable "ec2_tags" {
   type = map
   default = {
     project = "expense"
     component = "backend"
     env = "dev"
   }
-}
+} */
 
 variable "to_port" {
   default = "22"
