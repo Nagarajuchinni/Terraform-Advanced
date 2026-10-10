@@ -1,3 +1,3 @@
 output "ec2_info" {
-  value = aws_instance.Master
+  value = aws_instance.Master[0]
 }
