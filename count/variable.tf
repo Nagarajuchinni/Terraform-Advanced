@@ -9,7 +9,7 @@ variable "instance_type" {
 }
 
 variable "instances" {
-  default = ["nag", "raj", "chinni"]
+  default = ["mysql", "backend", "frontend"]
 }
 /* variable "ec2_tags" {
   type = map
@@ -34,4 +34,12 @@ variable "cidr_blocks" {
 
 variable "protocol" {
   default = "tcp"
+}
+
+variable "zone_id" {
+  default = "Z0943243CFW76K2E946D"
+}
+
+variable "domain_name" {
+    default = "nagarajuchinni.site"
 }
