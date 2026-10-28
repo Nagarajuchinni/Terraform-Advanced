@@ -1,4 +1,4 @@
-resource "aws_instance" "Master"{
+resource "aws_instance" "expense"{
 ami = var.ami_id
 count = 3
 instance_type  = var.instance_type
